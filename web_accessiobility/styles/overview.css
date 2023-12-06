@@ -23,6 +23,7 @@ main .title_path .path dd em {
     font-weight:500;
 }
 main .contents {
+    background: url(../images/bg.png) no-repeat scroll top right;
     padding: 50px 20px;
 }
 main .contents h2 {
