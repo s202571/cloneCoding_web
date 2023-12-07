@@ -25,3 +25,6 @@
 * goal 내용 글자 크기 24px
 * strategy 제목 글자 크기 18
 * header, path, strategy, footer 내용 크기 16
+------------
+## 서울시청 clonecoding
+* 23/12/07 클론코딩 시작
