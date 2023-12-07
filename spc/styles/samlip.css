@@ -1,14 +1,30 @@
-hreader {}
-hreader h1 {}
-hreader h1 a {}
-hreader h1 a img {}
-hreader nav {}
-hreader nav a {}
-hreader nav .actuve {
-    color:  #36b4e5;;
+header {
+    height: 92px;
+    overflow: hidden;
+    display:flex ;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
 }
-hreader .lnb {}
-hreader .lnb a {}
+header h1 {}    
+header h1 a {}
+header h1 a img {
+    width: 60px;
+}
+header nav {
+    ali
+}
+header nav a {
+    padding-right: 20px;
+}
+header nav .active {
+    color:  #36b4e5;
+}
+header .lnb {}
+header .lnb a {
+    padding-left: 20px;
+}
 /* main */
 main {
     text-align: center;
@@ -101,11 +117,29 @@ main .goal_strategy ul li p {
     line-height: 1.5;
 }
 /* footer */
-footer {}
-footer .top {}
+footer {
+    padding: 0 50px;
+}
+footer .top {
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
 footer .top .left {}
-footer .top .left a {}
+footer .top .left a {
+    font-weight: 700;
+    margin-right: 20px;
+}
 footer .top .right {}
-footer .top .right a {}
-footer address {}
-footer .copyright {}
+footer .top .right a {
+    border: 1px solid #aaa;
+    padding: 7px 15px;
+    display: inline-block;
+}
+footer address {
+    line-height: 30px;
+}
+footer .copyright {
+    margin: 20px 0 40px;
+}
