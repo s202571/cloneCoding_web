@@ -1,35 +1,97 @@
 /* header */
-header {
-    background-color: blueviolet;
-}
+header {}
 /* header top */
 header .top {
-    background-color: aqua;
+    width: 1151px; height: 48px;
+    display: flex;
+    flex-flow:row nowrap ;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
 }
 header .top nav {}
-header .top nav a {}
+header .top nav a {
+    margin-right: 16px;
+    font-size: 0.875rem;
+}
+header .top nav a:last-child {
+    margin-right: 0px;
+}
 header .top nav a img {}
-header .top .inb {}
-header .top .inb a {}
+header .top .lnb {}
+header .top .lnb a {
+    margin-left: 16px;
+    font-size: 0.875rem;
+}
+header .top .lnb a:first-child {
+    margin-left: 0px;
+}
 /* header botton */
-header .bottom {}
+header .bottom {
+    width: 1151px; height: 119px;
+    margin: 0 auto;
+    /* h1, search_frm, right 정렬 대상의 부모 flex 대상 */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
 header .bottom h1 {}
 header .bottom h1 a {}
 header .bottom h1 a img {}
 header .bottom #search_frm {}
-header .bottom #search_frm fieldset {}
-header .bottom #search_frm fieldset #user_serch_btn {}
-header .bottom #search_frm fieldset #search_btn {}
+header .bottom #search_frm fieldset {
+    width: 370px; height: 47px;
+    border: 2px solid #1e6cb3 ;
+    background-color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 13px 0 21px ;
+}
+header .bottom #search_frm fieldset #user_search {
+    width: 300px; outline: none;
+}
+header .bottom #search_frm fieldset #user_search::placeholder {
+    color: #1e6cb3;
+}
+header .bottom #search_frm fieldset #search_btn {
+    width: 24px; height: 24px;
+}
 header .bottom #search_frm fieldset #search_btn img {}
-header .right {}
-header .right #lang_frm {}
-header .right #lang_frm fieldset {}
-header .right #lang_frm fieldset #lang_sele {}
-header .right #lang_frm fieldset #lang_sele option {}
-header .right #lang_frm fieldset #go_btn {}
-header .right .weather {}
-header .right .weather .current_weather {}
-header .right .weather p {}
+header .bottom .right {}
+header .bottom .right #lang_frm {
+    float: right;
+}
+header .bottom .right #lang_frm fieldset {
+}
+header .bottom .right #lang_frm fieldset #lang_sele {
+    background-color: #fff;
+    width: 98px; height: 28px;
+    border: 1px solid #1e6cb3;
+    font-size: 0.65rem;
+    font-weight: 400;
+    margin-right; 3px: 
+}
+header .bottom .right #lang_frm fieldset #lang_sele option {}
+header .bottom .right #lang_frm fieldset #go_btn {
+    background-color: #1e6cb3;
+    color: #fff;
+    width: 28px; height: 28px;
+}
+header .bottom .right .weather {
+    clear: both;
+}
+header .bottom .right .weather .current_weather {
+    font-size: 1.2rem;
+    font-weight: 700px;
+    letter-spacing: -0.024rem;
+}
+header .bottom .right .weather p {
+    font-size: 0.65rem;
+    font-weight: 400;
+}
 /* main 1행 */
 /* main 1행-banner */
 /* main 1행-right(코로나, 교통정보) */
