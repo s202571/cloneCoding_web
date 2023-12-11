@@ -103,3 +103,75 @@ header .bottom .right .weather p {
 /* main 2행- 게시판-이달행사축제 */
 /* main 2행- 게시판-서비스 */
 /* main 2행- 게시판-서비스 */
+/* footer */
+footer {
+    background-color: aqua;
+    text-align: center;
+    width: 1151;
+    margin: 0 auto;
+}
+/* footer 1행 */
+footer .top {
+    background-color:burlywood;
+    width: 1151px; height: 67;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+footer .top .menu {}
+footer .top .menu a {
+    font-size: 0.8rem;
+    border-right:1px solid  ;
+    margin-right: 0 0.4px 0 0;
+}
+footer .top .menu a em {
+    font-size: 0.8rem;
+}
+footer .top .sns {}
+footer .top .sns a {
+    background-image: url(../images/icon_sns2/seoul_sns.png);
+    background-repeat: no-repeat;
+    width: 25px; height: 25px;
+    text-indent: -9999px;
+    display: inline-block;
+    text-indent: -9999px;
+}
+footer .top .sns a:hover {
+    background-position-y:-25px ;
+}
+footer .top .sns a:nth-child(1) {}
+footer .top .sns a:nth-child(2) {
+    background-position-x:-25px ;
+}
+footer .top .sns a:nth-child(3) {
+    background-position-x:-50px ;
+}
+footer .top .sns a:nth-child(4) {
+    background-position-x:-75px ;
+}
+footer .top .sns a:nth-child(5) {
+    background-position-x:-100px ;
+}
+footer .top .sns a:nth-child(6) {
+    background-position-x:-125px ;
+}
+/* footer 2행 */
+footer .button {
+    background-color: darkgray;
+    width: 1151px; height: 105px;
+    display: flex;
+    flex-flow: row no-wrap;
+    justify-content: space-between;
+}
+footer .button .left {
+   display: flex;
+   flex-flow: row nowrap;
+}
+footer .button .left p {}
+footer .button .left p img {}
+footer .button .left address {
+    font-size: 0.65rem;
+}
+footer .button .banner  {}
+footer .button .banner a {}
+footer .button .banner a img {}
