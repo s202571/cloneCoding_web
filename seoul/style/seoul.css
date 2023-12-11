@@ -1,0 +1,43 @@
+/* header */
+header {
+    background-color: blueviolet;
+}
+/* header top */
+header .top {
+    background-color: aqua;
+}
+header .top nav {}
+header .top nav a {}
+header .top nav a img {}
+header .top .inb {}
+header .top .inb a {}
+/* header botton */
+header .bottom {}
+header .bottom h1 {}
+header .bottom h1 a {}
+header .bottom h1 a img {}
+header .bottom #search_frm {}
+header .bottom #search_frm fieldset {}
+header .bottom #search_frm fieldset #user_serch_btn {}
+header .bottom #search_frm fieldset #search_btn {}
+header .bottom #search_frm fieldset #search_btn img {}
+header .right {}
+header .right #lang_frm {}
+header .right #lang_frm fieldset {}
+header .right #lang_frm fieldset #lang_sele {}
+header .right #lang_frm fieldset #lang_sele option {}
+header .right #lang_frm fieldset #go_btn {}
+header .right .weather {}
+header .right .weather .current_weather {}
+header .right .weather p {}
+/* main 1행 */
+/* main 1행-banner */
+/* main 1행-right(코로나, 교통정보) */
+/* main 2행 */
+/* main 2행- 주요서비스 */
+/* main 2행- 배너3 */
+/* main 2행- 게시판 */
+/* main 2행- 게시판-이벤트신청 */
+/* main 2행- 게시판-이달행사축제 */
+/* main 2행- 게시판-서비스 */
+/* main 2행- 게시판-서비스 */
