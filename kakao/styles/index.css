@@ -15,23 +15,64 @@ header nav a:last-child {margin-right: 0;}
 header .recruitment {color: #fff;}
 header .recruitment .fa-circle-chevron-right { color: #17a2b8;}
 /* main */
-main {}
-main .visual {}
-main .visual video {}
-main .visual .logo {}
+main {
+    background-color: #f1f1f1;
+    padding:40px ;
+}
+main .visual {
+    height: 650px; overflow: hidden;
+    position: relative; 
+}
+main .visual video {width: 100%;}
+main .visual .logo {
+    position: absolute; left: 0; top: 25%; z-index: 500px;
+    width: 100%; text-align: center;
+}
 main .visual .logo img {}
+main .board , main .gallery {
+    max-width: 1200px; margin: 40px auto 0;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between; 
+}
+main .board a, main .gallery a{
+    background-color:#fff ;
+    display: block;
+    border-radius: 5px;
+    width: calc(100% / 3 - 40px / 3);
+    padding: 15px;
+}
+main .board a h2, main .gallery a h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    line-height: 1.5;
+}
+main .board a .category, main .gallery a .category {
+    margin-bottom: 15px;
+}
 main .board {}
 main .board a {}
 main .board a .category {}
 main .board a h2 {}
-main .board a .contents {}
+main .board a:first-child h2 {
+    padding-bottom: 50px;
+}
+main .board a:first-child .contents {
+    color: #aaa;
+}
+main .board a .contents {
+    line-height: 1.7;
+}
 main .gallery {}
 main .gallery a {}
 main .gallery a .category {}
 main .gallery a .photo {}
-main .gallery a .photo img {}
+main .gallery a .photo img {width: 100%;}
 main .gallery a h2 {}
-main .gallery a .contents {}
+main .gallery a .contents {
+    color: #aaa;
+    line-height: 1.7;
+}
 /* footer */
 footer {}
 footer .top {}

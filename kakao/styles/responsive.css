@@ -1,5 +1,29 @@
+@media screen and (max-width:1200px) {
+    main .visual {height: 500px;}
+    main .visual .logo img {height: 300px;}
+}
+@media screen and (max-width:900px) {
+    main .visual {height: 400px;}
+    main .visual .logo img {height: 200px;}
+}
 @media screen and (max-width:769px) {
     header h1 a img {width: 100px;}
     header nav a {font-size: 0.875rem; margin-right: 10px;}
     header .recruitment {display: none;}
+    /* visual */
+    main {padding: 0;}
+    main .visual {
+        background-image: url(../images/m_bg.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    main .visual video {display: none;}
+    main .board , main .gallery {
+        flex-flow: column nowrap;
+        align-items: center;
+    } 
+    main .board a , main .gallery a  {
+        width: calc(100% - 40px);
+        margin: 20px; padding: 15px 15px 40px ;
+    }
 }
