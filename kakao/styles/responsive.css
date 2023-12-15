@@ -26,4 +26,11 @@
         width: calc(100% - 40px);
         margin: 20px; padding: 15px 15px 40px ;
     }
-}
+    /* footer */
+    footer .top {
+        flex-flow: column wrap;
+    } 
+    footer .top .site {margin-top: 15px;}
+    footer .top .site .sub {right: -33px;}
+    footer address {padding-left: 10px;}
+}/* 769 end */

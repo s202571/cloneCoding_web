@@ -74,12 +74,49 @@ main .gallery a .contents {
     line-height: 1.7;
 }
 /* footer */
-footer {}
-footer .top {}
+footer {
+    border-top:1px solid #aaa;
+    padding: 40px 0;
+}
+footer .top, address {
+    max-width: 1200px; margin: 0 auto;
+} 
+footer .top {
+    display: flex; flex-flow: row wrap;
+    justify-content: space-between; padding: 15px 0;
+    align-items: center;
+} 
 footer .top .f_nav {}
 footer .top .f_nav a {}
-footer .site {}
-footer .site a {}
-footer .site .sub {}
-footer .site .sub a {}
-footer address {}
+footer .top .f_nav a::after {
+    content: ''; display: inline-block;/* 필수 */
+    width: 1px; height: 12px;
+    background-color: #aaa;
+    margin: 0 4px 0 7px;
+}
+footer .top .f_nav a:last-child::after {
+    display: none;
+}
+footer .top .site {
+    position: relative;
+}
+footer .top .site > a {
+    background-color: #222; color: #fff;
+    display: block; border-radius:5px ;
+    padding: 7px 10px;
+}
+footer .top .site .sub {
+    background-color:#fff;
+    position:absolute;  right: 0; top: -110px;
+    width: 160px; 
+    border: 1px solid #aaa; border-radius: 5px;
+    display: none;/* 초기숨기기 */
+}
+footer .top .site:hover .sub {display: block; }
+footer .top .site .sub a {
+    display: block;
+    padding: 10px; border-bottom:1px solid #aaa ;
+}
+footer address {
+    color: #aaa; line-height:1.7 ;
+}
