@@ -130,7 +130,7 @@ let num = 1;
 let price = 36900;
 console.log(num_count,order_price, price_total)
 
-// selectresult.style.display = 'none';
+selectresult.style.display = 'none';
 
 colorOpt.addEventListener('change', function(){
     console.log(colorOpt)
@@ -179,12 +179,12 @@ plus.addEventListener('click', function(){
     num_count.value = num;
     total = num*price;
     order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
-    total.innerHTML = total.toLocaleString('ko-kr')+'원'
+    price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
 })
 minus.addEventListener('click', function(){
     num += -1;
     num_count.value = num;
     total = num*price;
     order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
-    total.innerHTML = total.toLocaleString('ko-kr')+'원'
+    price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
 })
