@@ -80,7 +80,9 @@ delivery_menu.addEventListener('click', function(){
 
 const colorOpt = document.querySelector('#colorOpt')
 const sizeOpt = document.querySelector('#sizeOpt')
-const selectresult = document.querySelectorAll('.selectResult')
+const selectresult = document.querySelector('.selectResult')
+/* // 나의 방식
+
 const selectresult_color = document.createElement('em')
 const selectresult_size = document.createElement('em')
 const opt_list = document.querySelectorAll('.opt_list')
@@ -90,6 +92,9 @@ console.log(colorOpt.options[1].value)
 console.log(colorOpt.options[1].value.text)
 // colorOpt, sizeOpt text데이터를 모두 변수로 수집 후
 // createElement, appendChild 를 이용해서 opt1, opt2 선택 데이터 출력하기
+
+// selectresult.style.display = 'none';
+
 colorOpt.addEventListener('change', function(){
     console.log(colorOpt.value)
     console.log(colorOpt.options[colorOpt.selectedIndex].text)
@@ -102,11 +107,84 @@ sizeOpt.addEventListener('change', function(){
     opt_list[0].appendChild(selectresult_color)
     opt_list[0].appendChild(selectresult_size)
 })
-// 1. 색상을 선택 안하면 사이즈가 선택이 안된다
-// 2. 색상마다 사이즈값이 개별값이다
-// 3. 사이즈 까지 입력해야 selectResult가 나온다
-// 4. 똑같은 값을 한번 더 입력하면 '이미 선택한 옵션입니다' 라고 팝업이 나온다
-// selectResult에서 + - 사용이된다
-// X를 누르면 seletResult가 지워진다
-// 가격이 수량에 따라 올라간다
-// 주문 가격이 num_result의 모든 값이 합쳐진 금액이다
+// selectResult 안 X 클릭 시 X의 부모를 DOM관계로 선택해서 숨기기
+const resultClose = selectresult.querySelector('.close')
+console.log(resultClose)
+
+resultClose.addEventListener('click', function(){
+    console.log(resultClose.parentElement)
+    resultClose.parentElement.style.display = 'none';
+}) */
+
+
+// 선생님 방법
+const optResult1 = document.createElement('em')
+const optResult2 = document.createElement('em')
+const resultView = document.querySelectorAll('.selectResult > span > span[class^=opt')
+console.log(resultView)
+
+const num_count = selectresult.querySelector('#num_count')
+const order_price = selectresult.querySelector('.order_price')
+const price_total = document.querySelector('fieldset:nth-child(2) .order_price')
+let num = 1;
+let price = 36900;
+console.log(num_count,order_price, price_total)
+
+// selectresult.style.display = 'none';
+
+colorOpt.addEventListener('change', function(){
+    console.log(colorOpt)
+    console.log(colorOpt.options[colorOpt.selectedIndex].text)
+    optResult1.innerHTML = colorOpt.options[colorOpt.selectedIndex].text
+    console.log(optResult1)
+})
+sizeOpt.addEventListener('change', function(){
+    console.log(sizeOpt.options[sizeOpt.selectedIndex].text)
+    optResult2.innerHTML = sizeOpt.options[sizeOpt.selectedIndex].text
+    console.log(optResult2)
+    //선택부모 보이기
+    selectresult.style.display = 'grid';
+    //선택 옵션 적용 대상에 위 option데이터값 출력
+    resultView[0].appendChild(optResult1)
+    resultView[1].appendChild(optResult2)
+    //선택 옵션의 수량 (num)출력
+    num_count.value = num;
+
+    //선택 옵션의 수량 (price)출력
+    order_price.innerHTML = price.toLocaleString('ko-kr')+'원'
+    price_total.innerHTML = price.toLocaleString('ko-kr')+'원'
+})
+
+
+// selectResult 안 X 클릭 시 X의 부모를 DOM관계로 선택해서 숨기기
+const resultClose = selectresult.querySelector('.close')
+console.log(resultClose)
+
+resultClose.addEventListener('click', function(){
+    console.log(resultClose.parentElement)
+    resultClose.parentElement.style.display = 'none';
+})
+
+// 수량 -, + 버튼 클릭 시 수량 값이 변경되어 그에 따라 가격 변동
+const minus = selectresult.querySelector('#minus')
+const plus = selectresult.querySelector('#plus')
+let total = 0
+console.log(minus,plus)
+// 1. 수량 1증가
+// 1-1. 수량 1증가한 값 표시
+// 2. 수량*가격 = 구매가격
+// 3. 구매가 세자리 콤마 표시
+plus.addEventListener('click', function(){
+    num += 1;
+    num_count.value = num;
+    total = num*price;
+    order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
+    total.innerHTML = total.toLocaleString('ko-kr')+'원'
+})
+minus.addEventListener('click', function(){
+    num += -1;
+    num_count.value = num;
+    total = num*price;
+    order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
+    total.innerHTML = total.toLocaleString('ko-kr')+'원'
+})
