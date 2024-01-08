@@ -7,9 +7,7 @@ main .item_detail .left_thumnail {
     background-color: pink; width: calc(100% - 481px);
     display: flex; flex-flow: row nowrap;
 }
-main .item_detail .right_container {
-    background-color: yellow; width: 481px;
-}
+main .item_detail .right_container { width: 481px;}
 /* left_thumnail */
 main .item_detail .left_thumnail .small_thumnail {
     width: 56px; display: flex; flex-flow: column nowrap;
@@ -68,12 +66,10 @@ main .item_detail .right_container .review .num {
     font-size: 0.813rem; color: #35c5f0; font-weight:700 ;
 }
 /* right - 가격, 오늘 출발, 쿠폰받기 (공통) */
-main .item_detail .right_container .price_coupon {
-    background-color: aqua; display: flex; justify-content: space-between;
+main .item_detail .right_container .price_coupon { display: flex; justify-content: space-between;
     align-items: flex-end;
 }
-main .item_detail .right_container .price_coupon .price {
-    background-color: lime; display: grid; grid-template-rows:30px 40px ; align-items: flex-end;
+main .item_detail .right_container .price_coupon .price { display: grid; grid-template-rows:30px 40px ; align-items: flex-end;
 }
 main .item_detail .right_container .price_coupon .price .before {}
 main .item_detail .right_container .price_coupon .price .price_result {}
@@ -110,11 +106,9 @@ main .item_detail .right_container .price_coupon .coupon_get i[class$=bracket] {
 main .item_detail .right_container .benefit_shipping {
     display: flex; flex-flow: row wrap; margin: 20px 0;
 }
-main .item_detail .right_container .benefit_shipping dt {
-    background-color: lime; width: 42px; color: #828c94; padding-bottom: 13px;
+main .item_detail .right_container .benefit_shipping dt { width: 42px; color: #828c94; padding-bottom: 13px;
 }
-main .item_detail .right_container .benefit_shipping dd {
-    background-color: aqua; width: calc(100% - 42px); 
+main .item_detail .right_container .benefit_shipping dd { width: calc(100% - 42px); 
 }
 main .item_detail .right_container .benefit_shipping dt:nth-child(1) {padding-bottom: 20px;}
 main .item_detail .right_container .benefit_shipping dd em {font-weight: 700;}
@@ -191,38 +185,51 @@ main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delive
     position: relative; top: -2px;
 }
 /* ight - 브랜드 바로가기 */
-main .item_detail .right_container .brand_link {}
-main .item_detail .right_container .brand_link .name {}
+main .item_detail .right_container .brand_link {
+    border-top: 1px solid #bdbdbd;
+    display: flex; flex-flow: row nowrap; padding: 15px 0;
+    justify-content: space-between; background-color: yellow; 
+}
+main .item_detail .right_container .brand_link .name {
+    font-size: 0.938rem; color: #525b61;
+}
 main .item_detail .right_container .brand_link .name img {}
-main .item_detail .right_container .brand_link .link {}
-main .item_detail .right_container .brand_link .link span {}
-main .item_detail .right_container .brand_link .link i[class$=right] {}
+main .item_detail .right_container .brand_link .link {
+    background-color: #f5f5f5; border-radius: 14px; 
+    padding: 4px 8px;
+}
+main .item_detail .right_container .brand_link .link span {
+    font-size: 0.813rem; letter-spacing: -0.3px;
+}
+main .item_detail .right_container .brand_link .link i[class$=right] {font-size: 0.813rem;}
 /* right_container_form */
 main .item_detail .right_container #itemFrm {}
 main .item_detail .right_container #itemFrm fieldset {}
 /* right_container_form 색상, 사이즈 선택 메뉴 (공통)*/
 main .item_detail .right_container #itemFrm fieldset #colorOpt,
-main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {background-color: #fff;}
 main .item_detail .right_container #itemFrm fieldset #colorOpt option,
 main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
 /* right_container_form 색상, 사이즈 선택 메뉴 (개별)*/
-main .item_detail .right_container #itemFrm fieldset #colorOpt {}
+main .item_detail .right_container #itemFrm fieldset #colorOpt {border: 1px solid #35c5f0;}
 main .item_detail .right_container #itemFrm fieldset #colorOpt option {}
-main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {border: 1px solid #dbdbdb;}
 main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
 /* right_container_form 색상, 사이즈 모든옵션 선택 시 open 내용(공통) */
-main .item_detail .right_container #itemFrm fieldset .selectResult {}
+main .item_detail .right_container #itemFrm fieldset .selectResult {
+    background: #dbdbdb;
+}
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1,
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus,
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {width: 17px; height: 17px;}
 /* right_container_form 색상, 사이즈 모든옵션 선택 시 open 내용(개별) */
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1 {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result {background: #fff; border: 1px solid #bdbdbd;}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus {}
-main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #num_count {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #num_count {width: 17px; height: 17px;}
 main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .order_price {}
 main .item_detail .right_container #itemFrm fieldset .selectResult .close {}
@@ -237,7 +244,14 @@ main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get i[class$=bracket] {}
 /* right_container_form 장바구니, 바로구매(공통) */
 main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart,
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {
+    border-radius: 4px; text-align: center; letter-spacing: -0.5px; font-weight: 600;
+    border: 1px solid #35c5f0;
+}
 /* right_container_form 장바구니, 바로구매(개별) */
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart {}
-main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart {
+    background-color: #fff; color: #35c5f0;
+}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {
+    background-color: #35c5f0; color: #fff;
+}

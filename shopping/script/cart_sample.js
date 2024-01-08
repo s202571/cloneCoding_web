@@ -64,7 +64,7 @@ console.log(delivery_menu, delivery_menu_open, delivery_menu_fa)
 delivery_menu_open.style.display = 'none';
 
 delivery_menu.addEventListener('click', function(){
-    delivery_menu.style = 'border-bottom-left-radius:0;', 'border-bottom-right-radius:0;';
+    delivery_menu.style = 'border-bottom-left-radius:0; border-bottom-right-radius:0;';
     delivery_menu_fa.style = 'transform :scaleY(-1);'
-    delivery_menu_open.style = 'display:bolck; '
+    delivery_menu_open.style = 'display:flex; '
 })
