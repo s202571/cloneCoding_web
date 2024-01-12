@@ -20,12 +20,19 @@ const before = document.querySelector('.price .before')
 const price_info_open = before.querySelector('.price .open')
 const price_info = before.querySelector('.price i[class$=info]')
 console.log(before,price_info_open,price_info) 
+let price_info_open_status = false
 
 price_info_open.style.display ='none';
 // price_info_open.style = "display:none";
 
 price_info.addEventListener('click', function(){
-    price_info_open.style.display ='block';
+    if(price_info_open_status == false){
+        price_info_open.style.display ='block';
+        price_info_open_status = true
+    }else{
+        price_info_open.style.display ='none';
+        price_info_open_status = false
+    }
 })
 // 내일 출발 i 쿨릭 시 팝업 출력하고 팝업 내 X 클릭 시 팝업 닫히기 JS
 // 1. 팝업 숨기기
@@ -34,6 +41,7 @@ price_info.addEventListener('click', function(){
 const benefit_shipping_open = item_detail.querySelector('.benefit_shipping .open')
 const benefit_shipping_close = benefit_shipping_open.querySelector('.benefit_shipping .close')
 const benefit_shipping_info = item_detail.querySelector('.benefit_shipping i[class$=info]')
+let benefit_shipping_open_status = false
 console.log(benefit_shipping_open, benefit_shipping_close, benefit_shipping_info)
 
 // 1.
@@ -41,11 +49,18 @@ benefit_shipping_open.style.display = 'none';
 
 // 2.
 benefit_shipping_info.addEventListener('click', function(){
-    benefit_shipping_open.style.display = 'block';
+    if(benefit_shipping_open_status == false){
+        benefit_shipping_open.style.display = 'block';
+        benefit_shipping_open_status = true
+    }else{
+        benefit_shipping_open.style.display = 'none';
+        benefit_shipping_open_status = false
+    }
 })
 
 // 3.
 benefit_shipping_close.addEventListener('click', function(){
+    benefit_shipping_open_status = false
     benefit_shipping_open.style.display = 'none';
 })
 
@@ -62,11 +77,22 @@ const delivery_menu_fa = item_detail.querySelector('.delivery_menu i[class$=down
 console.log(delivery_menu, delivery_menu_open, delivery_menu_fa)
 
 delivery_menu_open.style.display = 'none';
-
+let delivery_menu_open_status = false // 현재 상태 변수(false==숨김)
 delivery_menu.addEventListener('click', function(){
-    delivery_menu.style = 'border-bottom-left-radius:0; border-bottom-right-radius:0;';
-    delivery_menu_fa.style = 'transform :scaleY(-1);'
-    delivery_menu_open.style = 'display:flex; '
+    if(delivery_menu_open_status == false){
+        console.log(delivery_menu_open_status) // open
+        delivery_menu.style = 'border-bottom-left-radius:0; border-bottom-right-radius:0;';
+        delivery_menu_fa.style = 'transform :scaleY(-1);'
+        delivery_menu_open.style = 'display:flex; '
+        delivery_menu_open_status = !delivery_menu_open_status
+    }else{
+        console.log(delivery_menu_open_status) // close
+        delivery_menu_open_status = !delivery_menu_open_status
+        delivery_menu.style = 'border-bottom-left-radius:5px; border-bottom-right-radius:5px;';
+        delivery_menu_fa.style = 'transform :scaleY(1);'
+        delivery_menu_open.style = 'display:none; '
+    }
+    
 })
 //상품 색상, 사이즈 옵션을 선택했을 때 선택정보가 selectResult에 결과 값으로 출력되고 num_result의 구매수량에 따라 order_price 에 가격이 출력 되는 결과
 //상세절차 : 상품 색상, 사이즈 옵션을 선택했을 때
@@ -78,9 +104,7 @@ delivery_menu.addEventListener('click', function(){
 // 3-2. (위) 조건 달성 기준 결과 출력과 다른 옵션을 클릭 시 추가 게이터 기존데이터 (위) 결과
 // 3-3. (위) 조건 달성 기준 옵션1, 옵션2의 선택 데이터는 초기화됨
 
-const colorOpt = document.querySelector('#colorOpt')
-const sizeOpt = document.querySelector('#sizeOpt')
-const selectresult = document.querySelector('.selectResult')
+
 /* // 나의 방식
 
 const selectresult_color = document.createElement('em')
@@ -118,6 +142,9 @@ resultClose.addEventListener('click', function(){
 
 
 // 선생님 방법
+const colorOpt = document.querySelector('#colorOpt')
+const sizeOpt = document.querySelector('#sizeOpt')
+const selectresult = document.querySelector('.selectResult')
 const optResult1 = document.createElement('em')
 const optResult2 = document.createElement('em')
 const resultView = document.querySelectorAll('.selectResult > span > span[class^=opt')
@@ -132,11 +159,15 @@ console.log(num_count,order_price, price_total)
 
 selectresult.style.display = 'none';
 
+sizeOpt.disabled = true; // size select 비활성화
+
 colorOpt.addEventListener('change', function(){
     console.log(colorOpt)
     console.log(colorOpt.options[colorOpt.selectedIndex].text)
     optResult1.innerHTML = colorOpt.options[colorOpt.selectedIndex].text
     console.log(optResult1)
+
+    sizeOpt.disabled = false; // 색상 선택 후 사이즈 선택 가능
 })
 sizeOpt.addEventListener('change', function(){
     console.log(sizeOpt.options[sizeOpt.selectedIndex].text)
@@ -144,12 +175,12 @@ sizeOpt.addEventListener('change', function(){
     console.log(optResult2)
     //선택부모 보이기
     selectresult.style.display = 'grid';
+    selectResult_status = true // 장바구니에 담겼습니다
     //선택 옵션 적용 대상에 위 option데이터값 출력
     resultView[0].appendChild(optResult1)
     resultView[1].appendChild(optResult2)
     //선택 옵션의 수량 (num)출력
     num_count.value = num;
-
     //선택 옵션의 수량 (price)출력
     order_price.innerHTML = price.toLocaleString('ko-kr')+'원'
     price_total.innerHTML = price.toLocaleString('ko-kr')+'원'
@@ -163,6 +194,7 @@ console.log(resultClose)
 resultClose.addEventListener('click', function(){
     console.log(resultClose.parentElement)
     resultClose.parentElement.style.display = 'none';
+    selectResult_status = false // 장바구니 상품 선택하세요
 })
 
 // 수량 -, + 버튼 클릭 시 수량 값이 변경되어 그에 따라 가격 변동
@@ -174,17 +206,47 @@ console.log(minus,plus)
 // 1-1. 수량 1증가한 값 표시
 // 2. 수량*가격 = 구매가격
 // 3. 구매가 세자리 콤마 표시
-plus.addEventListener('click', function(){
-    num += 1;
-    num_count.value = num;
-    total = num*price;
-    order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
-    price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
+
+// 최소 구매 수량1, 최대구매수량 7
+// 최소 구매수량입니다
+//재고 7개로 더 구매할 수 없습니다
+plus.addEventListener('click', ()=>{
+    if(num < 7){
+        num++
+        num_count.value = num;
+        total = num*price;
+        order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
+        price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
+    }else{
+        alert('재고 7개로 더 구매할 수 없습니다')
+    }
 })
-minus.addEventListener('click', function(){
-    num += -1;
-    num_count.value = num;
-    total = num*price;
-    order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
-    price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
+minus.addEventListener('click', ()=>{
+    if(num > 1){
+        num--
+        num_count.value = num;
+        total = num*price;
+        order_price.innerHTML = total.toLocaleString('ko-kr')+'원'
+        price_total.innerHTML = total.toLocaleString('ko-kr')+'원'
+    }else{
+        alert('최소 구매 수량입니다')
+    }
+    // if(num === 1){
+    //     alert('최소구매 수량입니다')
+    // }
+})
+// 상품을 추가해 주세요 팝업
+// 장바구니에 상품이 담겼습니다
+const cartBtn = document.querySelector('#cart')
+const buyBtn = document.querySelector('#buy')
+let selectResult_status = false 
+// selectResult_status = true => selectResult 가 보일 때 적기
+// 다시 close 눌를 때 selectAResult_status = false 적기
+console.log(cartBtn,buyBtn)
+cartBtn.addEventListener('click' ,()=>{
+    if(selectResult_status == false ){
+        alert('상품을 추가해주세요')
+    }else(
+        alert('장바구니에 상품이 담겼습니다')
+    )
 })
