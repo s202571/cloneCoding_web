@@ -8,26 +8,39 @@ const login_title = document.querySelectorAll('.login_title h2 > a')
 const id_login_container = document.querySelector('.login_container .id_login')
 const disposable_login_container = document.querySelector('.login_container .disposable_login')
 const qr_login_container = document.querySelector('.login_container .qr_login')
+// 타이틀 아이콘 변수
 console.log(login_title, id_login_container, disposable_login_container,qr_login_container)
 // 초기 일회용, QR 내용 숨기기
 disposable_login_container.style.display = 'none'
 qr_login_container.style.display = 'none'
+// 초기값 ID로그인 활성화 시키기(active) *클릭 전
+login_title[0].parentElement.classList.add('active')
+// 초기값 아이콘
 
 // ID로그인 클릭하면 로그인내용O, 일회용내용X, QR코드내용X
 login_title[0].addEventListener('click', function(){
     id_login_container.style.display = 'block'
     disposable_login_container.style.display = 'none'
     qr_login_container.style.display = 'none'
+    login_title[0].parentElement.classList.add('active')
+    login_title[1].parentElement.classList.remove('active')
+    login_title[2].parentElement.classList.remove('active')
 })
 // 일회용 클릭하면 로그인 내용X 일회용내용O, QR코드내용X
 login_title[1].addEventListener('click', function(){
     id_login_container.style.display = 'none'
     disposable_login_container.style.display = 'block'
     qr_login_container.style.display = 'none'
+    login_title[0].parentElement.classList.remove('active')
+    login_title[1].parentElement.classList.add('active')
+    login_title[2].parentElement.classList.remove('active')
 })
 // QR코드 클릭하면 로그인내용X, 일회용내용X, QR코드내용O
 login_title[2].addEventListener('click', function(){
     id_login_container.style.display = 'none'
     disposable_login_container.style.display = 'none'
     qr_login_container.style.display = 'block'
+    login_title[0].parentElement.classList.remove('active')
+    login_title[1].parentElement.classList.remove('active')
+    login_title[2].parentElement.classList.add('active')
 })
