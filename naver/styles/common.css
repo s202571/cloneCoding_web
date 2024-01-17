@@ -1,6 +1,6 @@
 /* all */
 #login_wrap {
-    background-color: aqua; max-width: 743px; position: relative;
+    max-width: 743px; position: relative;
     margin: 0 auto;
 }
 #login_wrap #lang_select {

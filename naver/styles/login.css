@@ -2,7 +2,6 @@
 /* #login_wrap #login_wrap main */
 #login_wrap main {
     max-width: 460px; margin: 0 auto;
-    background: beige;
 }
 #login_wrap main #loginFrm {
     /* border: 1px solid #888; border-radius: 5px; */
@@ -148,7 +147,9 @@
     transform: translateX(30px);
 }
 /* ID로그인---error message */
-#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {
+    color: #f00; font-size: 0.91rem; padding: 10px 0;
+}
 /* ID로그인---로그인 버튼 */
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap {}
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap #loginBtn {
@@ -157,29 +158,97 @@
 }
 /* 일회용번호 */
 #login_wrap main #loginFrm fieldset .login_container .disposable_login {
-    background-color: palevioletred;}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login p {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login p em {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login > p > em > .icon {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login > .icon {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login > input {}
-#login_wrap main #loginFrm fieldset .login_container .disposable_login > #disposableLoginBtn {}
-/* QR코드 */
-#login_wrap main #loginFrm fieldset .login_container .qr_login {
-    background-color: yellow;
+    text-align: center;
 }
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .left {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .left img {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .right {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .right .time {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  > p {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app span {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login p {
+    font-size: 0.938rem;
+    color: #1e1e23;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login p em {
+    color: #03c75a; 
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login > p > em > .icon {
+    content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) -81px -161px;
+    background-size:251px 210px ; width: 16px; height: 16px;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login p em i[class*=fa]{
+    margin-left: 3px;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .center {
+    text-align: center; width: 100%; height: 12px;
+    margin-bottom: 38px;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login .center .icon {
+    content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) -186px -47px;
+    background-size:251px 210px ; width: 12px; height: 12px;
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login > input {
+    border: 1px solid #dadada ; padding: 16px 0;
+    border-radius: 5px; text-align: center; width: 100%;
+    background: #fff; 
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login > .error_message {}
+#login_wrap main #loginFrm fieldset .login_container .disposable_login > #disposableLoginBtn {
+    width: 100%; background: #03c75a; color:#fff; border-radius: 5px;
+    padding: 16px 0; margin-top: 20px;
+}
+/* QR코드 */
+#login_wrap main #loginFrm fieldset .login_container .qr_login {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link {
+    display: flex; flex-flow: row nowrap;
+    justify-content: center; height: 100px;
+    margin-bottom: 20px;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .left {
+    margin-left:45px ;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .left img {
+    width: 100px; height: 100px;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .right {
+    display: flex; flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .right p {
+    margin-top: 1px; font-size: 0.813rem; font-weight: 600;
+    color: #555;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .qr_link .right .time {
+    color: #03c75a; font-weight: 600; font-size: 1rem;
+    margin-bottom: 4px;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  > p {
+    text-align: center; padding-top: 5px;
+    font-size: 0.875rem; color: #1e1e23;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app {
+    padding: 0; font-size: 0.75rem; color: #666;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .icon:nth-of-type(1) {content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) -186px -59px;
+    background-size: 251px 210px; width: 12px; height: 12px;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .icon:nth-of-type(2) {content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) -186px -72px;
+    background-size: 251px 210px; width: 12px; height: 12px;
+}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .icon:last-child {content: ''; display: inline-block;
+    background: url(../images/m_sp_login.png) -186px -47px;
+    background-size: 251px 210px; width: 12px; height: 12px;
+}
 #login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .icon {}
-#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .number {}
+#login_wrap main #loginFrm fieldset .login_container .qr_login  .naver_app .number {
+    background: #000; border-radius: 10px; color: #fff;
+    padding: 1px 6px; width: 27px; height: 16px;
+    font-size: 0.75rem;
+}
 /* 찾기 ~ 광고 */
-#login_wrap main .search {}
+#login_wrap main .search {
+    text-align: center;
+}
 #login_wrap main .search a {}
 #login_wrap main .advertising {}
 #login_wrap main .advertising a {}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 | 네이버</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/login.css">
@@ -66,9 +67,12 @@
                         <div class="login_c disposable_login">
                             <!-- contents -->
                             <p>네이버앱의 <em>메뉴 > 설정 <span class="icon"><!-- 스프라이트 --></span>> 로그인 아이디 관리 ><br>
-                            더보기<!-- fontawesome --> > 일회용 로그인 번호</em>에 보이는 번호를 입력해주세요.</p>
-                            <span class="icon"><!-- 스프라이트 --></span>
+                            더보기<i class="fa-solid fa-ellipsis-vertical"></i><!-- fontawesome --> > 일회용 로그인 번호</em>에 보이는 번호를 입력해주세요.</p>
+                            <div class="center">
+                                <span class="icon"><!-- 스프라이트 --></span>
+                            </div>
                             <input type="text" placeholder="번호를 입력해주세요" id="number">
+                            <div class="error_message"><!-- JS --></div>
                             <button type="button" id="disposableLoginBtn">로그인</button>
                         </div>
                         <!-- 내용 탭 1. QR코드 -->
