@@ -5,44 +5,33 @@
 // 제목변수
 const login_title = document.querySelectorAll('.login_title h2 > a')
 // 내용 변수
-const id_login_container = document.querySelector('.login_container .id_login')
-const disposable_login_container = document.querySelector('.login_container .disposable_login')
-const qr_login_container = document.querySelector('.login_container .qr_login')
+const login_c_all = document.querySelectorAll('.login_c')
 // 타이틀 아이콘 변수
-console.log(login_title, id_login_container, disposable_login_container,qr_login_container)
-// 초기 일회용, QR 내용 숨기기
-disposable_login_container.style.display = 'none'
-qr_login_container.style.display = 'none'
+console.log(login_title, login_c_all)
+// 모든 내용 숨기기 -> ID로그인만 보이기(초기)
+const login_c_hide = ()=>{for(let h of login_c_all){h.style.display = 'none'}}
+login_c_hide()
+login_c_all[0].style.display = 'block'
+
 // 초기값 ID로그인 활성화 시키기(active) *클릭 전
 login_title[0].parentElement.classList.add('active')
-// 초기값 아이콘
 
-// ID로그인 클릭하면 로그인내용O, 일회용내용X, QR코드내용X
-login_title[0].addEventListener('click', function(){
-    id_login_container.style.display = 'block'
-    disposable_login_container.style.display = 'none'
-    qr_login_container.style.display = 'none'
-    login_title[0].parentElement.classList.add('active')
-    login_title[1].parentElement.classList.remove('active')
-    login_title[2].parentElement.classList.remove('active')
-})
-// 일회용 클릭하면 로그인 내용X 일회용내용O, QR코드내용X
-login_title[1].addEventListener('click', function(){
-    id_login_container.style.display = 'none'
-    disposable_login_container.style.display = 'block'
-    qr_login_container.style.display = 'none'
-    login_title[0].parentElement.classList.remove('active')
-    login_title[1].parentElement.classList.add('active')
-    login_title[2].parentElement.classList.remove('active')
-})
-// QR코드 클릭하면 로그인내용X, 일회용내용X, QR코드내용O
-login_title[2].addEventListener('click', function(){
-    id_login_container.style.display = 'none'
-    disposable_login_container.style.display = 'none'
-    qr_login_container.style.display = 'block'
-    login_title[0].parentElement.classList.remove('active')
-    login_title[1].parentElement.classList.remove('active')
-    login_title[2].parentElement.classList.add('active')
+// 초기 탭 제목 디자인 숨기기
+const title_active_remove = () => {
+    for(let rr of login_title){rr.parentElement.classList.remove('active')}
+}
+// 탭 제목 클릭 시 클릭한 대상에만 디자인 적용하기
+// 초기값 아이콘
+login_title.forEach((t, i)=>{
+    console.log(t,i)
+    t.addEventListener('click', ()=>{
+        // 탭 제목
+        title_active_remove()
+        t.parentElement.classList.add('active')
+        // 탭 내용
+        login_c_hide()
+        login_c_all[i].style.display = 'block'
+    })
 })
 
 // -----------------------------------
