@@ -1,0 +1,38 @@
+body, html {scroll-behavior: smooth;}
+.wrap {position: relative; width: 100%; height: 900px;}
+.wrap .photo {overflow: hidden;}
+.wrap .photo img {width: 100%;}
+.wrap .link {
+    position: fixed; top: 50%; right: 50px;
+    display: flex; flex-flow: column wrap;
+    align-items: flex-end;
+}
+.wrap .link button {
+    background-color: #222;
+    color: #fff; width: 30px; height: 30px;
+    border-radius: 50%; position: relative; margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.wrap .link button:hover {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100px; border-radius: 10px;
+}
+.wrap .link button::after {
+    position: absolute; right: 0; top: 0;
+    font-size: 0.85rem; padding: 10px;
+    display: block; line-height: 30px;
+    white-space: nowrap;
+}
+.wrap .link button:nth-child(1):hover::after {
+    content: 'Intelieo A.';
+}
+.wrap .link button:nth-child(2):hover::after {
+    content: 'Intelieo B.';
+}
+.wrap .link button:nth-child(3):hover::after {
+    content: 'Intelieo C.';
+}
+.wrap .link button:nth-child(4):hover::after {
+    content: 'Intelieo D.';
+}
