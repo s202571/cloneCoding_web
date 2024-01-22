@@ -1,0 +1,32 @@
+body, html {scroll-behavior: smooth;}
+.wrap {position: relative; width: 100%; height: 900px;}
+.wrap .photo {overflow: hidden;}
+.wrap .photo img{width: 100%;}
+.wrap .all {position: absolute; left: 0; top: 0;}
+.wrap .all .first {position: fixed; padding: 25px 50px;}
+.wrap .all .first h1 {font-size: 2rem; font-weight: 600; font-family: "Noto Sans", sans-serif;}
+.wrap .all .first .link {}
+.wrap .all .first .link .link_btn {
+    font-family: "Noto Sans", sans-serif; padding: 15px 10px; 
+    color: #222; background: none; font-weight: 500;
+}
+.wrap .all .first .link .link_btn:hover {
+    border-bottom:2px solid #222;
+}
+.wrap .all .last { 
+    position: fixed; top: 50%; left: 50px;
+    transform: translateY(-50%);
+    display: flex; flex-flow: column nowrap;
+}
+.wrap .all .last .active {
+    content: ''; display: block; width: 20px; height: 2px; 
+    background: #000; margin-bottom: 10px;
+    transition: all 0.5s;
+}
+.wrap .all .last .active::after {
+    background: #fff; width: 40px;
+}
+.wrap .all .last .A {}
+.wrap .all .last .B {}
+.wrap .all .last .C {}
+.wrap .all .last .D {}
